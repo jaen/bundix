@@ -27,6 +27,14 @@
       name = "bundix-gems";
       gemdir = repoRoot;
       gemset = ./../gemset.nix;
+
+      groups = [];
+
+      gemConfig = pkgs.defaultGemConfig // {
+        nokogiri = attrs: ((pkgs.defaultGemConfig.nokogiri attrs) // {
+          buildInputs = [ pkgs.zlib ];
+        });
+      };
     };
   in
     pkgs.stdenv.mkDerivation {

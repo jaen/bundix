@@ -36,12 +36,12 @@ inputs@{
             TERM = "xterm";
 
             buildInputs = with pkgs; [
-              # gems.wrappedRuby
-              # gems
-              zlib
+              gems.wrappedRuby
+              gems
+              # zlib
               ruby
               nix-prefetch-scripts
-              # bundix
+              bundix
             ];
           };
         })
