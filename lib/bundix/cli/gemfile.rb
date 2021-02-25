@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'tempfile'
+
 require_relative '../../bundix'
 require_relative '../gemfile'
 

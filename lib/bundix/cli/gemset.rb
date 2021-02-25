@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "tempfile"
+
 class Bundix
   module CLI
     class Gemset < Command

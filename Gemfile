@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org' do
-  gem 'bundler'
+  gem 'bundler', "~> 2.1.4"
   gem 'cmdparse'
 
   group :development do

@@ -8,7 +8,7 @@ require 'socket'
 require 'tmpdir'
 require 'base64'
 
-(ENV.keys - ['PATH']).each { |key| ENV.delete(key) }
+(ENV.keys - ['PATH', 'XDG_DATA_DIR', 'HOME']).each { |key| ENV.delete(key) }
 
 require_relative '../lib/bundix'
 

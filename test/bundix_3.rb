@@ -23,7 +23,7 @@ class TestBundixGemfile < Minitest::Test
       DEPENDENCIES
         minitest!
       BUNDLED WITH
-        1.17.2
+        2.1.4
     LOCK
 
     assert_equal gemset.to_gemfile.join("\n") + "\n", <<~LOCK
@@ -51,7 +51,7 @@ class TestBundixGemfile < Minitest::Test
         minitest!
         bundix!
       BUNDLED WITH
-        1.17.2
+        2.1.4
     LOCK
 
     assert_equal gemset.to_gemfile.join("\n") + "\n", <<~LOCK

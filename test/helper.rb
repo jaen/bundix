@@ -2,6 +2,7 @@
 
 require 'minitest/autorun'
 
+
 class Bundix
   module TestHelpers
     def with_tempdir
