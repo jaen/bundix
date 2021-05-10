@@ -58,7 +58,16 @@ class Bundix
       FileUtils.mkdir_p dir
       file = File.join(dir, url.gsub(/[^\w-]+/, '_'))
 
-      download(file, url) unless File.size?(file)
+      unless File.size?(file)
+        if File.exist?(url)
+          warn "Copying #{file} from #{url}"
+
+          FileUtils.cp(url, file, :preserve => true)
+        else
+          download(file, url)
+        end
+      end
+      
       return unless File.size?(file)
 
       sh(
@@ -69,6 +78,7 @@ class Bundix
       ).force_encoding('UTF-8').strip
     rescue => ex
       puts ex
+      puts ex.backtrace
       nil
     end
 
